@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SB Admin 2 - Tables</title>
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this page -->
+  <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Envoltorio de página -->
+  <div id="wrapper">
+
+    <!-- Barra lateral -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Barra lateral - Marca -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Interface
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Components</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Components:</h6>
+            <a class="collapse-item" href="buttons.html">Buttons</a>
+            <a class="collapse-item" href="cards.html">Cards</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Utilities</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Utilities:</h6>
+            <a class="collapse-item" href="utilities-color.html">Colors</a>
+            <a class="collapse-item" href="utilities-border.html">Borders</a>
+            <a class="collapse-item" href="utilities-animation.html">Animations</a>
+            <a class="collapse-item" href="utilities-other.html">Other</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Addons
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Pages</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Login Screens:</h6>
+            <a class="collapse-item" href="login.html">Login</a>
+            <a class="collapse-item" href="register.html">Register</a>
+            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+            <div class="collapse-divider"></div>
+            <h6 class="collapse-header">Other Pages:</h6>
+            <a class="collapse-item" href="404.html">404 Page</a>
+            <a class="collapse-item" href="blank.html">Blank Page</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Charts</span></a>
+      </li>
+
+      <!-- Nav Item - Tables -->
+      <li class="nav-item active">
+        <a class="nav-link" href="tables.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Tablas</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+          
+                <!-- Counter - Alerts -->
+              </a>
+           
+           
+
+
+            <!-- Nav Item - INICIO/CREAR CLIENTE -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">ANDREA FERREL</span>
+                <i class="fas fa-caret-down"></i>              </a>
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="http://192.168.1.10:8089/sistema_web/MVC/CLIENTES/VISTA/index.php">
+                  <i class="fas fa-home mr-2 text-gray-400"></i>
+                  INICIO
+                </a>
+                
+                <a class="dropdown-item" href="http://192.168.1.10:8089/sistema_web/MVC/CLIENTES/CONTROLADOR/create.php">
+                  <i class="fas fa-user-plus mr-2 text-gray-400"></i>
+                  CREAR NUEVO CLIENTE
+                </a>
+                
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+
+
+
+             <!-- Nav Item - Messages -->
+             <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btx" type="button" data-toggle="collapse"  ata-target="#navbarSupportedContent" onclick="location.href='http://192.168.1.10:8089/sistema_web/'">MENU</button>
+              </a>
+            </li>
+            <style>
+              .btx {
+                background-color: #43586d;
+                border: none;
+                color: white;
+                padding: 5px 16px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 15px;
+                margin: 8px 2px;
+                margin-block-start: 1.33em;
+                  margin-block-end: 1.33em;
+                  margin-inline-start: 0px;
+                  margin-inline-end: 0px;
+                cursor: pointer;
+              }
+              </style>
+
+          </ul>
+
+        </nav>
+        <!-- End of Topbar -->
+
+        <!-- Comience el contenido de la página -->
+        <div class="container-fluid">
+
+
+          
+          <!-- Page Heading -->
+          <hr class="new5">
+
+
+          <div class="form-group">
+                    <label for="fecha_cot"><h5>FECHA DE COTIZACIÓN</h5></label>
+                    <input type="date" name="fecha_cot" id="fecha_cot" class="form-control">
+                  </div>
+          
+              <p>
+          
+                  <div class="form-group">     
+                    <label for="cliente"><h5>PRESENTADA A :</h5></label>
+                      
+                      <select class="form-control" type="checkbox" name="cliente" id="cliente">
+                            <?php 
+                              while($datos = mysqli_fetch_array($query))
+                                  {
+                            ?>
+                                <option value=" <?php echo $datos['name']?> "> <?php echo $datos['name']?> </option>
+                            <?php
+                                  }
+                            ?> 
+                      </select>
+                                </p>
+            
+                  <div class="form-group">
+                    <label for="contacto"><h5>CONTACTO</h5></label>
+                    <input type="text" name="contacto" id="contacto" class="form-control">
+                  </div>
+          
+                  <hr class="new5">
+          
+            <div class="form-row text-center">
+          
+              <div class="form-group w-25">
+                <label for="material"><font color="grey"><h5></h5></font></label>
+          
+          <p>
+              
+          <br>
+          <input type="text5" name="textodeshabilitado" value="TRABAJO:" class="form-control" disabled></p>
+          <p>
+          <input type="text5" name="textodeshabilitado" value="SOPORTE PRINCIPAL:" class="form-control" disabled></p>
+          </p>
+          
+          <p>
+          <input type="text5" name="textodeshabilitado" value="FORMATO:" class="form-control" disabled></p>
+          </p>
+          
+          <p>
+          <input type="text5" name="textodeshabilitado" value="CANTIDAD:" class="form-control" disabled></p>
+          </p>
+          
+          <p>
+          <input type="text5" name="textodeshabilitado" value="CAT. TRABAJO:" class="form-control" disabled></p>
+          </p>
+          
+          <p>
+          <input type="text5" name="textodeshabilitado" value="P/SUGERIDO:" class="form-control" disabled></p>
+          </p>
+          </div>
+          
+                                                                                                                            <style> 
+                                                                                                                          input[type=text4] {
+                                                                                                                            width: 100%;
+                                                                                                                            padding: 12px 20px;
+                                                                                                                            margin: 8px 0;
+                                                                                                                            box-sizing: border-box;
+                                                                                                                            border: none;
+                                                                                                                            background-color: #ffeff1;
+                                                                                                                            color: black;
+                                                                                                                          }
+                                                                                                                              </style>
+          
+                                                                                                                              <style> 
+                                                                                                                          input[type=text5] {
+                                                                                                                            width: 100%;
+                                                                                                                            padding: 12px 20px;
+                                                                                                                            margin: 8px 0;
+                                                                                                                            box-sizing: border-box;
+                                                                                                                            border: none;
+                                                                                                                            background-color: #e7efe9;
+                                                                                                                            color: black;
+                                                                                                                          }
+                                                                                                                            </style>
+                                                                                                                            <style> 
+                                                                                                                          input[type=text6] {
+                                                                                                                            width: 100%;
+                                                                                                                            padding: 12px 20px;
+                                                                                                                            margin: 8px 0;
+                                                                                                                            box-sizing: border-box;
+                                                                                                                            border: none;
+                                                                                                                            background-color: #d4ebef;
+                                                                                                                            color: black;
+                                                                                                                          }
+                                                                                                                            </style>
+          
+          
+              
+          <div class="form-group w-25">
+            <label for="item"><font color="grey"><h6>ITEM 1</h6></font></label>
+          <p>
+              <input type="text5" name="item" list="item" placeholder="" class="form-control">
+          <datalist id="item">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="item_a" list="item_a" placeholder="" class="form-control">
+          <datalist id="item_a">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="item_b" list="item_b" placeholder="" class="form-control">
+          <datalist id="item_b">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="item_c" list="item_c" placeholder="" class="form-control">
+          <datalist id="item_c">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="item_d" list="item_d" placeholder="" class="form-control">
+          <datalist id="item_d">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="item_e" list="item_e" placeholder="" class="form-control">
+          <datalist id="item_e">
+              <option value=""></option>
+          </datalist>
+          </p>
+          </div>  
+          
+          
+          <div class="form-group w-25">
+            <label for="item2"><font color="grey"><h6>ITEM 2</h6></font></label>
+          
+          <p>
+              <input type="text5" name="item2" list="item2" placeholder="" class="form-control">
+          <datalist id="item2">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="item2_a" list="item2_a" placeholder="" class="form-control">
+          <datalist id="item2_a">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="item2_b" list="item2_b" placeholder="" class="form-control">
+          <datalist id="item2_b">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="formato_4" list="formato_4" placeholder="" class="form-control">
+          <datalist id="formato_4">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="formato_5" list="formato_5" placeholder="" class="form-control">
+          <datalist id="formato_5">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="formato_6" list="formato_6" placeholder="" class="form-control">
+          <datalist id="formato_6">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          
+          </div>
+            
+          <div class="form-group w-25">
+            <label for="precio"><font color="grey"><h6>ITEM 3</h6></font></label>
+          
+          <p>
+              <input type="text5" name="precio" list="precio" placeholder="" class="form-control">
+          <datalist id="precio">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="precio_2" list="precio_2" placeholder="" class="form-control">
+          <datalist id="precio_2">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="precio_3" list="precio_3" placeholder="" class="form-control">
+          <datalist id="precio_3">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="precio_4" list="precio_4" placeholder="" class="form-control">
+          <datalist id="precio_4">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="precio_5" list="preprecio_5cio_2" placeholder="" class="form-control">
+          <datalist id="precio_5">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="precio_6" list="precio_6" placeholder="" class="form-control">
+          <datalist id="precio_6">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          
+          </div>
+          <div class="form-group w-25">
+            <label for="total"><font color="grey"><h6>ITEM 4</h6></font></label>
+          
+          <p>
+              <input type="text5" name="total" list="total" placeholder="" class="form-control">
+          <datalist id="total">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="total_2" list="total_2" placeholder="" class="form-control">
+          <datalist id="total_2">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="total_3" list="total_3" placeholder="" class="form-control">
+          <datalist id="total_3">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="total_4" list="total_4" placeholder="" class="form-control">
+          <datalist id="total_4">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="total_5" list="total_5" placeholder="" class="form-control">
+          <datalist id="total_5">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="total_6" list="total_6" placeholder="" class="form-control">
+          <datalist id="total_6">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          
+          </div>
+          </div>
+          
+          <div class="form-row text-center">
+          
+            <div class="form-group w-25">
+              <label for="material"><font color="grey"><h5></h5></font></label>
+          
+          <p>
+              
+          <br>
+          <input type="text5" name="textodeshabilitado" value="TRABAJO:" class="form-control" disabled></p>
+          <p>
+          <input type="text5" name="textodeshabilitado" value="SOPORTE PRINCIPAL:" class="form-control" disabled></p>
+          </p>
+          
+          <p>
+          <input type="text5" name="textodeshabilitado" value="FORMATO:" class="form-control" disabled></p>
+          </p>
+          
+          <p>
+          <input type="text5" name="textodeshabilitado" value="CANTIDAD:" class="form-control" disabled></p>
+          </p>
+          
+          <p>
+          <input type="text5" name="textodeshabilitado" value="CAT. TRABAJO:" class="form-control" disabled></p>
+          </p>
+          
+          <p>
+          <input type="text5" name="textodeshabilitado" value="P/SUGERIDO:" class="form-control" disabled></p>
+          </p>
+          </div>
+          <div class="form-group w-25">
+            <label for="cantidad"><font color="grey"><h6>ITEM 5</h6></font></label>
+          <p>
+              <input type="text5" name="cantidad" list="cantidad" placeholder="" class="form-control">
+          <datalist id="cantidad">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="cantidad_2" list="cantidad_2" placeholder="" class="form-control">
+          <datalist id="cantidad_2">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="cantidad_3" list="cantidad_3" placeholder="" class="form-control">
+          <datalist id="cantidad_3">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="cantidad_4" list="cantidad_4" placeholder="" class="form-control">
+          <datalist id="cantidad_4">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="cantidad_5" list="cantidad_5" placeholder="" class="form-control">
+          <datalist id="cantidad_5">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="cantidad_6" list="cantidad_6" placeholder="" class="form-control">
+          <datalist id="cantidad_6">
+              <option value=""></option>
+          </datalist>
+          </p>
+          </div>  
+          
+          
+          <div class="form-group w-25">
+            <label for="formato"><font color="grey"><h6>ITEM 6</h6></font></label>
+          
+          <p>
+              <input type="text5" name="formato" list="formato" placeholder="" class="form-control">
+          <datalist id="formato">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="formato_2" list="formato_2" placeholder="" class="form-control">
+          <datalist id="formato_2">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="formato_3" list="formato_3" placeholder="" class="form-control">
+          <datalist id="formato_3">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="formato_4" list="formato_4" placeholder="" class="form-control">
+          <datalist id="formato_4">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="formato_5" list="formato_5" placeholder="" class="form-control">
+          <datalist id="formato_5">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="formato_6" list="formato_6" placeholder="" class="form-control">
+          <datalist id="formato_6">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          
+          </div>
+            
+          <div class="form-group w-25">
+            <label for="precio"><font color="grey"><h6>ITEM 7</h6></font></label>
+          
+          <p>
+              <input type="text5" name="precio" list="precio" placeholder="" class="form-control">
+          <datalist id="precio">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="precio_2" list="precio_2" placeholder="" class="form-control">
+          <datalist id="precio_2">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="precio_3" list="precio_3" placeholder="" class="form-control">
+          <datalist id="precio_3">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="precio_4" list="precio_4" placeholder="" class="form-control">
+          <datalist id="precio_4">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="precio_5" list="preprecio_5cio_2" placeholder="" class="form-control">
+          <datalist id="precio_5">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="precio_6" list="precio_6" placeholder="" class="form-control">
+          <datalist id="precio_6">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          
+          </div>
+          <div class="form-group w-25">
+            <label for="total"><font color="grey"><h6>ITEM 8 </h6></font></label>
+          
+          <p>
+              <input type="text5" name="total" list="total" placeholder="" class="form-control">
+          <datalist id="total">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="total_2" list="total_2" placeholder="" class="form-control">
+          <datalist id="total_2">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="total_3" list="total_3" placeholder="" class="form-control">
+          <datalist id="total_3">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="total_4" list="total_4" placeholder="" class="form-control">
+          <datalist id="total_4">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="total_5" list="total_5" placeholder="" class="form-control">
+          <datalist id="total_5">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          <p>
+              <input type="text5" name="total_6" list="total_6" placeholder="" class="form-control">
+          <datalist id="total_6">
+              <option value=""></option>
+          </datalist>
+          </p>
+          
+          
+          </div>
+          </div>
+          
+          
+          <div class="form-row text-center">
+            <div class="form-group w-25">
+              <label for="cant"><font color="grey"><h6>CANT.</h6></font></label>
+          
+          <p>
+                  <input type="text" name="cant" list="cant" placeholder="" class="form-control">
+              <datalist id="cant">
+                  <option value=""></option>
+              </datalist>
+          <p>
+          
+          <p>
+                  <input type="text" name="cant_2" list="cant_2" placeholder="" class="form-control">
+              <datalist id="cant_2">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="cant_3" list="cant_3" placeholder="" class="form-control">
+              <datalist id="cant_3">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="cant_4" list="cant_4" placeholder="" class="form-control">
+              <datalist id="cant_4">
+                  <option value=""></option>
+              </datalist>
+              </p>
+          
+              <p>
+                  <input type="text" name="cant_5" list="cant_5" placeholder="" class="form-control">
+              <datalist id="cant_5">
+                  <option value=""></option>
+              </datalist>
+          
+              <p>
+                  <input type="text" name="cant_6" list="cant_6" placeholder="" class="form-control">
+              <datalist id="cant_6">
+                  <option value=""></option>
+              </datalist>
+              </p>
+          
+              <p>
+                  <input type="text" name="cantl_7" list="cant_7" placeholder="" class="form-control">
+              <datalist id="cant_7">
+                  <option value=""></option>
+              </datalist>
+              </p>
+          
+              <p>
+                  <input type="text" name="cant_8" list="cant_8" placeholder="" class="form-control">
+              <datalist id="cant_8">
+                  <option value=""></option>
+              </datalist>
+              </p>
+            </div>
+          </p>
+          
+          <div class="form-group w-25">
+            <label for="cod"><font color="grey"><h6>CÓD.</h6></font></label>
+          <p>
+                  <input type="text" name="cod" list="cod" placeholder="" class="form-control">
+              <datalist id="cod">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="cod_2" list="cod_2" placeholder="" class="form-control">
+              <datalist id="cod_2">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="cod_3" list="cod_3" placeholder="" class="form-control">
+              <datalist id="cod_3">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="cod_4" list="cod_4" placeholder="" class="form-control">
+              <datalist id="cod_4">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="cod_5" list="cod_5" placeholder="" class="form-control">
+              <datalist id="cod_5">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="cod_6" list="cod_6" placeholder="" class="form-control">
+              <datalist id="cod_6">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="cod_7" list="cod_7" placeholder="" class="form-control">
+              <datalist id="cod_7">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="cod_8" list="cod_8" placeholder="" class="form-control">
+              <datalist id="cod_8">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+            </div>  
+          
+            <div class="form-group w-25">
+              <label for="nom"><font color="grey"><h6>NOM</h6></font></label>
+          
+          <p>
+                  <input type="text" name="nom" list="nom" placeholder="" class="form-control">
+              <datalist id="nom">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="nom_2" list="nom_2" placeholder="" class="form-control">
+              <datalist id="nom_2">
+                  <option value=""></option>
+              </datalist>
+          </p>
+              
+          <p>
+                  <input type="text" name="nom_3" list="nom_3" placeholder="" class="form-control">
+              <datalist id="nom_3">
+                  <option value=""></option>
+              </datalist>
+          </p>
+              
+          <p>
+                  <input type="text" name="nom_4" list="nom_4" placeholder="" class="form-control">
+              <datalist id="nom_4">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="nom_5" list="nom_5" placeholder="" class="form-control">
+              <datalist id="nom_5">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="nom_6" list="nom_6" placeholder="" class="form-control">
+              <datalist id="nom_6">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="nom_7" list="nom_7" placeholder="" class="form-control">
+              <datalist id="nom_7">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="nom_8" list="nom_8" placeholder="" class="form-control">
+              <datalist id="nom_8">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+            </div>
+                
+            <div class="form-group w-25">
+              <label for="descripcion"><font color="grey"><h6>DESCRIPCIÓN</h6></font></label>
+          
+          <p>
+                  <input type="text" name="descripcion" list="descripcion" placeholder="" class="form-control">
+              <datalist id="descripcion">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="descripcion_2" list="descripcion_2" placeholder="" class="form-control">
+              <datalist id="descripcion_2">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="descripcion_3" list="descripcion_3" placeholder="" class="form-control">
+              <datalist id="descripcion_3">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="descripcion_4" list="descripcion_4" placeholder="" class="form-control">
+              <datalist id="descripcion_4">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="descripcion_5" list="descripcion_5" placeholder="" class="form-control">
+              <datalist id="descripcion_5">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="descripcion_6" list="descripcion_6" placeholder="" class="form-control">
+              <datalist id="descripcion_6">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="descripcion_7" list="descripcion_7" placeholder="" class="form-control">
+              <datalist id="descripcion_7">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="descripcion_8" list="descripcion_8" placeholder="" class="form-control">
+              <datalist id="descripcion_8">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          
+            </div>
+            <div class="form-group w-25">
+              <label for="tamaño"><font color="grey"><h6>TAMAÑO</h6></font></label>
+          
+          <p>
+                  <input type="text" name="tamaño" list="tamaño" placeholder="" class="form-control">
+              <datalist id="tamaño">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="tamaño_2" list="tamaño_2" placeholder="" class="form-control">
+              <datalist id="tamaño_2">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="tamaño_3" list="tamaño_3" placeholder="" class="form-control">
+              <datalist id="tamaño_3">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="tamaño_4" list="tamaño_4" placeholder="" class="form-control">
+              <datalist id="tamaño_4">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="tamaño_5" list="tamaño_5" placeholder="" class="form-control">
+              <datalist id="tamaño_5">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="tamaño_6" list="tamaño_6" placeholder="" class="form-control">
+              <datalist id="tamaño_6">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="tamaño_7" list="tamaño_7" placeholder="" class="form-control">
+              <datalist id="tamaño_7">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="tamaño_8" list="tamaño_8" placeholder="" class="form-control">
+              <datalist id="tamaño_8">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+            </div>
+          
+            <div class="form-group w-25">
+              <label for="tiempo_entrega"><font color="grey"><h6>T/ENTREGA</h6></font></label>
+          
+          <p>
+                  <input type="text" name="tiempo_entrega" list="tiempo_entrega" placeholder="" class="form-control">
+              <datalist id="tiempo_entrega">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="tiempo_entrega2" list="tiempo_entrega2" placeholder="" class="form-control">
+              <datalist id="tiempo_entrega2">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="tiempo_entrega3" list="tiempo_entrega3" placeholder="" class="form-control">
+              <datalist id="tiempo_entrega3">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="tiempo_entrega4" list="tiempo_entrega4" placeholder="" class="form-control">
+              <datalist id="tiempo_entrega4">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="tiempo_entrega5" list="tiempo_entrega5" placeholder="" class="form-control">
+              <datalist id="tiempo_entrega5">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="tiempo_entrega6" list="tiempo_entrega6" placeholder="" class="form-control">
+              <datalist id="tiempo_entrega6">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="tiempo_entrega7" list="tiempo_entrega7" placeholder="" class="form-control">
+              <datalist id="tiempo_entrega7">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="tiempo_entrega8" list="tiempo_entrega8" placeholder="" class="form-control">
+              <datalist id="tiempo_entrega8">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+            </div>
+          
+            <div class="form-group w-25">
+              <label for="pu"><font color="grey"><h6>P/U</h6></font></label>
+          
+          <p>
+                  <input type="text" name="pu" list="pu" placeholder="" class="form-control">
+              <datalist id="pu">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="pu_2" list="pu_2" placeholder="" class="form-control">
+              <datalist id="pu_2">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="pu_3" list="pu_3" placeholder="" class="form-control">
+              <datalist id="pu_3">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="pu_4" list="pu_4" placeholder="" class="form-control">
+              <datalist id="pu_4">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="pu_5" list="pu_5" placeholder="" class="form-control">
+              <datalist id="pu_5">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="pu_6" list="pu_6" placeholder="" class="form-control">
+              <datalist id="pu_6">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="pu_7" list="pu_7" placeholder="" class="form-control">
+              <datalist id="pu_7">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="pu_8" list="pu_8" placeholder="" class="form-control">
+              <datalist id="pu_8">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+          <input type="text6" name="textodeshabilitado" value="TOTAL:" class="form-control" disabled></p>
+          </p>
+          
+          
+            </div>
+            <div class="form-group w-25">
+              <label for="total"><font color="grey"><h6>P/T</h6></font></label>
+          
+          <p>
+                  <input type="text" name="total" list="total" placeholder="" class="form-control">
+              <datalist id="total">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="total_2" list="total_2" placeholder="" class="form-control">
+              <datalist id="total_2">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="total_3" list="total_3" placeholder="" class="form-control">
+              <datalist id="total_3">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="total_4" list="total_4" placeholder="" class="form-control">
+              <datalist id="total_4">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="total_5" list="total_5" placeholder="" class="form-control">
+              <datalist id="total_5">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text" name="total_6" list="total_6" placeholder="" class="form-control">
+              <datalist id="total_6">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="total_7" list="total_7" placeholder="" class="form-control">
+              <datalist id="total_7">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          <p>
+                  <input type="text" name="total_8" list="total_8" placeholder="" class="form-control">
+              <datalist id="total_8">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          <p>
+                  <input type="text6" name="total_9" list="total_9" placeholder="" class="form-control">
+              <datalist id="total_9">
+                  <option value=""></option>
+              </datalist>
+          </p>
+          
+          
+            </div>
+          </div>
+          
+          <p>
+          </p>
+          <hr class="new5">
+          
+          <p>
+          <div class="form">
+          <div class="form-group">
+              <label for="notas1"><h5>NOTAS</h5></label>
+              <input type="text" class="form-control" name="notas1" id="notas1" >
+          </div>
+          </form>
+          </p>
+          </div>
+          
+          <hr class="new5">
+          
+                  <div class="form-group ">
+                  <button type="submit" class="btn btn-info"  style="background-color:#4aa8b7; border-color:#467880;" ><h6>Guardar</h6></button>
+                  </div>
+          
+          
+            </div>
+          
+            </div>
+          
+                </form>
+              </div>
+            </div>
+          </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/datatables-demo.js"></script>
+
+</body>
+
+</html>

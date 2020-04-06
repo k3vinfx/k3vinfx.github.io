@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Custom Icons Tutorial - Leaflet</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <!-- but these tow links in your html if not exsits -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+    <!-- end  -->
+    <style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    #map {
+        width: 100%;
+        height: 100%;
+    }
+
+    a:link {
+    font-family: Arial, "Helvetica Neue";
+    color: #008CBA;
+
+
+}
+
+
+
+
+    .button {
+    background-color: white; /* Green */
+    border: none;
+    color:#008CBA;
+    padding: 7px 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 1px 2px;
+    transition-duration: 0.8s;
+    cursor: pointer;
+    }
+
+    .button1 {
+    position: absolute;
+    left:48px; top:10px; z-index: 10000;
+    background-color: #008CBA; 
+    color: white; 
+    border-radius: 12px;
+    border: 2px solid #008CBA;
+    }
+
+    .button1:hover {
+    background-color: white;
+    color: #008CBA;
+}
+    </style>
+</head>
+
+<body>
+    <A class="button button1" HREF="../index.php">VOLVER AL MENU PRINCIPAL</A>
+    
+  
+    <div id='map'></div>
+    <script>
+    // here we set the center of the map.
+
+    var map = L.map('map').setView([ -17.6611296 ,-65.0574725], 6);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    var LeafIcon = L.Icon.extend({
+        options: {
+            shadowUrl: 'leaf-shadow.png',
+            iconSize: [45, 45],
+            iconAnchor: [22, 10],
+            popupAnchor: [-3, -16]
+        }
+    });
+    // here we set the icons we can change them with other images.
+    var greenIcon = new LeafIcon({ iconUrl: 'leaf-green.png' }),
+        redIcon = new LeafIcon({ iconUrl: 'bio.png' }),
+        orangeIcon = new LeafIcon({ iconUrl: 'leaf-orange.png' });
+    // first location.
+
+
+   // LA PAZ.
+    L.marker([  -16.494840451870203, -68.13595017937524], { icon: redIcon }).bindPopup("<b>LA PAZ </b>  <br> Infectados 8. <br> Fallecidos 0.").addTo(map);
+   // CBBA.  
+    L.marker([  -17.38321433987065, -66.16465643814914], { icon: redIcon  }).bindPopup("<b>CBBA </b><br> Infectados 8. <br> Fallecidos 0.").addTo(map);
+   // ST. CRUZ.    
+    L.marker([  -17.79775438152911, -63.17630214181144], { icon: redIcon  }).bindPopup("<b>ST. CRUZ</b><br> Infectados 34. <br> Fallecidos 0.").addTo(map);
+   // ORURO.     
+    L.marker([  -17.96257470525378, -67.10732077081622], { icon: redIcon  }).bindPopup("<b>ORURO</b><br> Infectados 8. <br> Fallecidos 0.").addTo(map);
+   // POTOSI.   
+    L.marker([  -19.572248568662502, -65.75612165892609], { icon: redIcon  }).bindPopup("<b>POTOSI</b><br> Infectados 1. <br> Fallecidos 0.").addTo(map);
+  
+ 
+     </script>
+</body>
+
+</html>

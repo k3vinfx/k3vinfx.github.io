@@ -1,0 +1,106 @@
+
+
+body{
+    font-family: 'Arial',sans-serif;
+    font-size: 10px;
+    background: #f2f2f2;
+}
+
+.contenedor{
+    width: 200%;
+    max-width: 1000px;
+    margin: 30px auto;
+    overflow: hidden;
+
+}
+
+h2{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 10px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: rgb(255, 255, 255) ;
+}
+
+
+
+
+.barra__buscador{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.formulario{
+    display: flex;
+    width: 150%;
+    overflow: hidden;
+}
+
+
+
+
+form .input__text:focus{
+    border: 10px solid #1b743c;
+}
+form .form-group{
+    display: flex;
+    width: 90%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+
+
+.btn2{
+    color: #900;
+    border: 1px solid #900;
+    font-weight: bold;
+}
+
+form .btn{
+    color: #900;
+    border: 1px solid #900;
+    font-weight: bold;
+}
+.btn__nuevo{
+    float: right;
+    background: #1b743c !important;
+}
+
+.btn__group{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.btn__danger{
+    background: #8a0505 !important;
+}
+
+
+/* table */
+
+.btn__update{
+    display: inline-block;
+    font-size: 15px;
+    background: #28e231;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+
+}
+
+.btn__delete{
+    display: inline-block;
+    font-size: 15px;
+    background: #c41212;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
