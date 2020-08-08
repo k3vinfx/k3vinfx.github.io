@@ -1,106 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
 
-
-body{
-    font-family: 'Arial',sans-serif;
-    font-size: 10px;
-    background: #f2f2f2;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.contenedor{
-    width: 200%;
-    max-width: 1000px;
-    margin: 30px auto;
-    overflow: hidden;
-
+html {
+  height: 100%;
+ 
 }
 
-h2{
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-    font-size: 10px;
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-    color: rgb(255, 255, 255) ;
+body {
+
+  min-height: 100%;
+  background-image: url("img/fondo.png");
 }
 
+.grid-container > * {
 
-
-
-.barra__buscador{
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  border-radius: 0px;
+  padding: 0px;
+  text-align: center;
 }
 
-.formulario{
-    display: flex;
-    width: 150%;
-    overflow: hidden;
+.header {
+  grid-area: header;
+
+  background-image: url("img/mural2.png");
+  background-size: 100% 100%;
+ 
+}
+
+.main {
+  grid-area: main;
+
 }
 
 
 
-
-form .input__text:focus{
-    border: 10px solid #1b743c;
-}
-form .form-group{
-    display: flex;
-    width: 90%;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+.footer {
+  grid-area: footer;
+  background-image: url("img/LINEA_MADERA.png");
 }
 
+.grid-container {
+  display: grid;
+  gap: 0px;
+  grid-template:
+    "header"  35%
 
-
-.btn2{
-    color: #900;
-    border: 1px solid #900;
-    font-weight: bold;
+    "main"    auto
+   
+    "footer"  20px;
 }
 
-form .btn{
-    color: #900;
-    border: 1px solid #900;
-    font-weight: bold;
-}
-.btn__nuevo{
-    float: right;
-    background: #1b743c !important;
-}
+.responsive {
+  width: 100%;
+max-width:225px;
+height: auto;
+padding: 3%;
 
-.btn__group{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-}
-
-.btn__danger{
-    background: #8a0505 !important;
 }
 
 
-/* table */
+.grid-container {
+  display: grid;
+  grid-row-gap: 1px;
+  grid-template-columns: auto;
+  background-color: #fcff53;
+  padding: 0px;
+}
 
-.btn__update{
-    display: inline-block;
-    font-size: 15px;
-    background: #28e231;
-    color: #fff;
-    border-radius: 5px;
-    padding: 5px 10px;
+.grid-item {
+
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+    /* grid-template-columns: 200px auto;
+    grid-template-rows: 100px 50px auto 100px;
+    grid-template-areas: 
+    "header  header"
+    "navbar  navbar"
+    "sidebar main"
+    "footer  footer"; */
+
+    grid-template:
+    "header  header header"  38%
+    "navbar  main   sidebar" auto
+    "footer  footer footer"  25px /
+    100px    auto   100px;
+
+  
+  }
+  .header {
+    grid-area: header;
+
+    background-image: url("img/mural3.png");
+    background-size: 100% 100%;
+   
+  }
 
 }
 
-.btn__delete{
-    display: inline-block;
-    font-size: 15px;
-    background: #c41212;
-    color: #fff;
-    border-radius: 5px;
-    padding: 5px 10px;
+
+
+@media (min-width: 1000px) {
+  .grid-container {
+    
+  
+    grid-template:
+    
+      "header  header header"  36%
+      "navbar  main   sidebar" auto
+      "footer  footer footer"  20px /
+      180px    auto   180px;
+  }
+
+  .header {
+    grid-area: header;
+
+    background-image: url("img/mural.png");
+    background-size: 100% 100%;
+   
+  }
+
+}
+ 
+
+
+
+
+@media (min-width: 1290px) {
+  .grid-container {
+    
+  
+    grid-template:
+    
+      "header  header header"  35%
+      "navbar  main   sidebar" auto
+      "footer  footer footer"  30px /
+      380px    auto   380px;
+  }
+  .header {
+    grid-area: header;
+
+    background-image: url("img/mural.png");
+    background-size: 100% 100%;
+   
+  }
+
+}
+  @media (min-width: 1500px) {
+    .grid-container {
+     
+      grid-template:
+      
+        "header  header header"  35%
+        "navbar  main   sidebar" auto
+        "footer  footer footer"  30px /
+        480px    auto   480px;
+    }
+
+   
 }
 
